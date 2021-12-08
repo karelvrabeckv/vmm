@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="uk-text-center">
+  <a href="{% url 'index' %}">
+    <button class="uk-button uk-button-primary">Search Again</button>
+  </a>
+  <h2>Your Image</h2>
+  <div class="uk-card uk-card-default">
+    <img src="{{ input }}" alt="" uk-img>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="uk-section uk-text-center">
+  <h2>Results</h2>
+
+  {% if amount > 1 %}
+    <p>Found {{ amount }} similar images in {{ time }} s</p>
+  {% elif amount == 1 %}
+    <p>Found {{ amount }} similar image in {{ time }} s</p>
+  {% else %}
+    <p>No similar images found</p>
+  {% endif %}
+
+  <div class="uk-child-width-1-3@m" uk-scrollspy="target: .uk-card; cls: uk-animation-fade; delay: 100" uk-grid>
+
+    {% for result in results %}    
+      <div>
+        <div class="uk-card uk-card-default uk-card-hover">
+
+          <div class="uk-card-badge uk-label">{{ result.similarity }}</div>
+          <div class="uk-flex uk-height-medium uk-inline-clip uk-transition-toggle uk-cover-container">
+            <a href="{{ result.url }}">
+              <img data-src="{{ result.url }}" alt="" uk-img uk-cover>
+              <div class="uk-flex uk-flex-center uk-flex-middle uk-overlay uk-overlay-primary uk-position-cover uk-transition-fade">
+                <span uk-icon="icon: search; ratio: 2"></span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>

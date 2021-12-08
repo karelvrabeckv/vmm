@@ -1,0 +1,15 @@
+{% load static %}
+
+<footer>
+
+  {% if amount %}
+    <div class="uk-text-center uk-margin-bottom">
+      <a href="" class="uk-icon-button" uk-icon="icon: arrow-up; ratio: 1.5" uk-scroll></a>
+    </div>
+  {% endif %}
+
+  <div class="uk-text-center uk-margin-bottom">
+    <span>Powered by</span>
+    <img data-src="{% static 'footer-logo.svg' %}" width="100" alt="" uk-img>
+  </div>
+</footer>
